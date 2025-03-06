@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExPlayer - Революционный музыкальный плеер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>ExPlayer</h1>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="upload">
+                <i class="fas fa-upload"></i>
+                Загрузить
+            </button>
+            <button class="tab-btn" data-tab="player">
+                <i class="fas fa-play"></i>
+                Плеер
+            </button>
+            <button class="tab-btn" data-tab="favorites">
+                <i class="fas fa-heart"></i>
+                Избранное
+            </button>
+        </nav>
+
+        <main>
+            <section id="upload" class="tab-content active">
+                <div class="upload-container">
+                    <div class="upload-area" id="dropZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Перетащите файлы сюда или нажмите для выбора</p>
+                        <input type="file" id="fileInput" accept=".mp3,.wav" multiple hidden>
+                    </div>
+                </div>
+            </section>
+
+            <section id="player" class="tab-content">
+                <div class="player-container">
+                    <div class="player-controls">
+                        <div class="track-info">
+                            <h3 id="currentTrack">Нет трека</h3>
+                            <p id="currentArtist">-</p>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="time">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                        <div class="controls">
+                            <button id="shuffleBtn"><i class="fas fa-random"></i></button>
+                            <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                            <button id="playBtn"><i class="fas fa-play"></i></button>
+                            <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                            <button id="repeatBtn"><i class="fas fa-redo"></i></button>
+                        </div>
+                        <div class="volume">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                        </div>
+                    </div>
+                    <div class="playlist" id="playlist">
+                        <!-- Плейлист будет заполняться динамически -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="favorites" class="tab-content">
+                <div class="favorites-container">
+                    <div class="favorites-list" id="favoritesList">
+                        <!-- Избранные треки будут заполняться динамически -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
